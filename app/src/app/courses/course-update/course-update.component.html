@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+
+  <mat-toolbar color="primary" style="margin-bottom: 20px;">
+    Editar Curso
+  </mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form">
+
+      <mat-form-field appearance="fill" class="full-width">
+        <input matInput placeholder="Nome" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Categoria</mat-label>
+        <select matNativeControl formControlName="category">
+          <option value="null" selected>Selecione</option>
+          <option value="front-end">Front-end</option>
+          <option value="back-end">Back-end</option>
+        </select>
+
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onUpdate()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+
+</mat-card>
