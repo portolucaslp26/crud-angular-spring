@@ -26,6 +26,7 @@ public class ApiApplication {
 
 			courseRepository.save(c);
 
+			//docker run -it -p 8080:8080 api:0.0.1-SNAPSHOT
 
 		};
 	}

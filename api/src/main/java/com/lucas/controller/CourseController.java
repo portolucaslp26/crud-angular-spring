@@ -45,12 +45,6 @@ public class CourseController {
         return courseRepository.findById(id).orElseThrow();
     }
 
-    // @PutMapping(value = "/{id}")
-    // public Course update(@PathVariable("id") @NotNull Long id, @RequestBody
-    // Course course) {
-    // return CourseService.update(id, course);
-    // }
-
     @PutMapping(value = "/{id}")
     public ResponseEntity update(@PathVariable("id") long id, @RequestBody Course course) {
         return courseRepository.findById(id)
