@@ -39,7 +39,6 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     this.courses$ = this.coursesServices.listCourses()
       .pipe(
-        tap((res) => { console.log(res) }),
         catchError(error => {
           this.onError(`${error.status} ${error.statusText}`);
           return of([]);

@@ -7,12 +7,12 @@
     <form [formGroup]="form">
 
       <mat-form-field appearance="fill" class="full-width">
-        <input matInput placeholder="Nome" formControlName="name">
+        <input matInput placeholder="Nome" formControlName="name" required>
       </mat-form-field>
 
       <mat-form-field appearance="fill" class="full-width">
         <mat-label>Categoria</mat-label>
-        <select matNativeControl formControlName="category">
+        <select matNativeControl formControlName="category" required="true">
           <option value="null" selected>Selecione</option>
           <option value="front-end">Front-end</option>
           <option value="back-end">Back-end</option>

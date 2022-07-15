@@ -48,8 +48,19 @@ export class CourseFormComponent implements OnInit {
   }
 
   onSubmit() {
+    if (!this.form.value.name || !this.form.value.category) {
+      this.onError('Preencha todos os campos');
+      return;
+    }
+    else if (this.form.valid) {
       this.courseService.save(this.form.value)
-      .subscribe(() => {this.onSuccess('Curso salvo com sucesso')});
+        .subscribe(() => {
+          this.onSuccess('Curso criado com sucesso');
+        }, error => {
+          this.onError(error.error.message);
+        }
+      );
+    }
   }
 
   onCancel() {
